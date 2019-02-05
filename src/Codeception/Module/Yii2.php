@@ -321,8 +321,7 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
     private function loadFixtures($test)
     {
         $this->debugSection('Fixtures', 'Loading fixtures');
-        if (empty($this->loadedFixtures)
-            && method_exists($test, $this->_getConfig('fixturesMethod'))
+        if (method_exists($test, $this->_getConfig('fixturesMethod'))
         ) {
             $connectionWatcher = new Yii2Connector\ConnectionWatcher();
             $connectionWatcher->start();
